@@ -12,36 +12,111 @@
             background-color: #f4f4f4;
             color: #333;
         }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav {
+            background: #2c3e50;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #f39c12;
+        }
+        .hero {
+            background: url('image.png') no-repeat center center/cover;
+            position: relative;
+            height: 400px;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+            animation: fadeInDown 2s ease-in-out;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 2s ease-in-out;
+        }
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
             padding: 20px;
         }
-        header {
-            background: #35424a;
-            color: #ffffff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-        }
-        .profile-image {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .profile-image img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid #35424a;
-        }
         section {
             background: #ffffff;
             padding: 20px;
             margin-top: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        section.in-view {
+            opacity: 1;
+            transform: translateY(0);
         }
         h2 {
             color: #35424a;
@@ -56,33 +131,102 @@
         a {
             color: #35424a;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
         a:hover {
-            text-decoration: underline;
+            color: #f39c12;
+        }
+        .skills-bar {
+            margin-top: 10px;
+        }
+        .skill {
+            margin-bottom: 10px;
+        }
+        .skill-bar {
+            height: 25px;
+            background: #f39c12;
+            width: 0;
+            border-radius: 5px;
+            transition: width 2s ease;
+        }
+        .skill-title {
+            font-weight: bold;
         }
         .contact-info {
             text-align: center;
             margin-top: 20px;
+        }
+        footer {
+            background: #35424a;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            position: relative;
+        }
+        .footer-social a {
+            color: #ffffff;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+        .back-to-top {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            background: #f39c12;
+            color: #ffffff;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            display: none;
+            transition: background 0.3s ease;
+        }
+        .back-to-top:hover {
+            background: #e67e22;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Yeshwanth Govindu</h1>
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 </header>
 
-<div class="container">
-    <div class="profile-image">
-        <img src="C:\Users\bargav\Desktop\New\Tennesse\IMG20231103175050.jpg" alt="Yeshwanth Govindu">
+<div class="hero">
+    <div>
+        <h1>Yeshwanth Govindu</h1>
+        <p>Software Engineer | Data Enthusiast | AI & ML Enthusiast</p>
+        background: url("C:\Users\bargav\Desktop\New\OnePlus\IMG_20221124_065157.jpg") no-repeat center center/cover;
+        position: relative;
+        height: 400px;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        
     </div>
+</div>
 
-    <section>
+<div class="container">
+    <section id="about">
         <h2>About Me</h2>
         <p>I'm Yeshwanth Govindu, a passionate Software Engineer with over 2 years of experience in real-time data processing, RESTful microservices, and Elasticsearch cluster management. I hold a Master's degree in Computer Science from the University of North Texas and have a keen interest in Data Analytics, Machine Learning, and Web Technologies.</p>
     </section>
 
-    <section>
+    <section id="education">
         <h2>Education</h2>
         <ul>
             <li><strong>University of North Texas</strong>, Denton, TX</li>
@@ -91,20 +235,29 @@
         </ul>
     </section>
 
-    <section>
+    <section id="skills">
         <h2>Technical Skills</h2>
-        <ul>
-            <li><strong>Programming Languages:</strong> Python, C++, Java, JavaScript, R</li>
-            <li><strong>Database/Cloud/Big Data/ETL:</strong> Oracle, SQL Server, MySQL, AWS, Databricks, Spark, Hadoop, Kafka, Dbt, Airflow</li>
-            <li><strong>Operating Systems:</strong> Linux, Windows</li>
-            <li><strong>AWS Services:</strong> EC2, EMR, Lambda, Glue, S3, Redshift, CloudWatch, SageMaker, ECS, Code Pipeline, Code Commit</li>
-            <li><strong>Machine Learning:</strong> Pandas, NumPy, Matplotlib, Scikit-Learn, TensorFlow, PyTorch, NLTK, MLFlow</li>
-            <li><strong>Version Control:</strong> GitHub, Git, GitHub Co-Pilot</li>
-            <li><strong>Web Technologies:</strong> HTML, CSS, React, Flask, Django, JavaScript</li>
-        </ul>
+        <div class="skills-bar">
+            <div class="skill">
+                <div class="skill-title">Python</div>
+                <div class="skill-bar" style="width: 90%;"></div>
+            </div>
+            <div class="skill">
+                <div class="skill-title">Java</div>
+                <div class="skill-bar" style="width: 85%;"></div>
+            </div>
+            <div class="skill">
+                <div class="skill-title">JavaScript</div>
+                <div class="skill-bar" style="width: 80%;"></div>
+            </div>
+            <div class="skill">
+                <div class="skill-title">React</div>
+                <div class="skill-bar" style="width: 75%;"></div>
+            </div>
+        </div>
     </section>
 
-    <section>
+    <section id="experience">
         <h2>Work Experience</h2>
         <ul>
             <li><strong>TATA ELXSI</strong>, Bangalore, India - Software Engineer - Data (Aug 2021 – July 2023)</li>
@@ -121,7 +274,7 @@
         </ul>
     </section>
 
-    <section>
+    <section id="projects">
         <h2>Academic Projects & Competitions</h2>
         <ul>
             <li><strong>Quecourt Federal Court System Database:</strong> Developed a robust database system for managing operations of the US Federal Judiciary.</li>
@@ -129,7 +282,7 @@
         </ul>
     </section>
 
-    <section>
+    <section id="certifications">
         <h2>Certifications</h2>
         <ul>
             <li><strong>Data Structures and Algorithms (Google Tech Dev Guide)</strong></li>
@@ -137,7 +290,7 @@
         </ul>
     </section>
 
-    <div class="contact-info">
+    <div class="contact-info" id="contact">
         <h2>Contact Me</h2>
         <p>Email: <a href="mailto:yeshwanth.g.us@gmail.com">yeshwanth.g.us@gmail.com</a></p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/yeshwanth-govindu" target="_blank">https://www.linkedin.com/in/yeshwanth-govindu</a></p>
@@ -145,6 +298,61 @@
         <p>Mobile: +1 (940)-843 7377</p>
     </div>
 </div>
+
+<footer>
+    <div class="footer-social">
+        <a href="https://www.linkedin.com/in/yeshwanth-govindu" target="_blank">LinkedIn</a> |
+        <a href="https://www.github.com/yeshh45" target="_blank">GitHub</a>
+    </div>
+    <a href="#" class="back-to-top">↑</a>
+    <p>&copy; 2024 Yeshwanth Govindu. All rights reserved.</p>
+</footer>
+
+<script>
+    // Smooth scroll for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Intersection Observer for fade-in effect
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            }
+        });
+    });
+
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+    });
+
+    // Show/hide back-to-top button
+    const backToTopButton = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
+
+    backToTopButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Animate skill bars
+    const skillBars = document.querySelectorAll('.skill-bar');
+    skillBars.forEach(bar => {
+        bar.style.width = bar.style.width;
+    });
+</script>
 
 </body>
 </html>
