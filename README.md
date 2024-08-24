@@ -43,7 +43,9 @@ Contact
 For any inquiries, feel free to reach out:
 
 Email: yeshwanth.g.us@gmail.com
-LinkedIn: linkedin.com/in/yeshwanth-govindu
-GitHub: github.com/yeshh45
+
+LinkedIn: linkedin.com/in/yeshwanth-govindu 
+
+GitHub: github.com/yeshh45 
 
 Thank you for visiting my portfolio website!
