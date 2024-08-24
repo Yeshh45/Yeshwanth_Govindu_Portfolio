@@ -28,6 +28,14 @@ This portfolio website provides an interactive and visually appealing way to sho
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/yeshh45/portfolio.git
+2. Navigate to the project directory
+   ```bash
+   cd portfolio
+3. Open the index.html file in a web browser:
+
+Simply double-click the index.html file, or
+Right-click on the file and select "Open with" -> Your preferred browser.
+
 **Usage**
 The website is a static site, so it doesn't require a server to run. You can open the index.html file directly in any modern web browser to view the portfolio.
 For deploying the site, consider using GitHub Pages or any other static site hosting service.
